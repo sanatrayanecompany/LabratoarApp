@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="PaymentStationApp.SelectOperation"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Width="650" MinWidth="650" MaxWidth="650" Height="492" MinHeight="492" MaxHeight="492" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/ButtonStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Width="650" MinWidth="650" MaxWidth="650" Height="492" PreviewKeyDown="Grid_PreviewKeyDown">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="PaymentButton"
+                Style="{StaticResource UCIButton}" 
+                Content="پرداخت" 
+                Grid.Column="1"
+                HorizontalAlignment="Right" 
+                VerticalAlignment="Top" 
+                Height="50" 
+                Width="130"
+                Margin="0,155,0,0"
+                Click="PaymentButton_Click" RenderTransformOrigin="0.503,0.5">
+        </Button>
+        <Button x:Name="BalanceButton"
+                Style="{StaticResource UCIButton}" 
+                Content="شارژ مستقیم"
+                Grid.Column="1" 
+                HorizontalAlignment="Right" 
+                VerticalAlignment="Top" 
+                Height="50" 
+                Width="130"
+                Margin="0,250,0,0"
+                Click="TopupButton_Click" RenderTransformOrigin="0.503,0.5">
+        </Button>
+        <Button x:Name="ReipetButton"
+                Style="{StaticResource UCIButton}" 
+                Content="پرداخت قبض"
+                Grid.Column="1"
+                HorizontalAlignment="Right" 
+                VerticalAlignment="Top" 
+                Height="50" 
+                Width="130"
+                Margin="0,345,0,0" Click="BillRequestButton_Click">
+        </Button>
+    </Grid>
+</UserControl>

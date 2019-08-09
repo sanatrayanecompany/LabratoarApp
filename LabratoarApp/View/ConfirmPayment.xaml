@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="PaymentStationApp.ConfirmPayment"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Width="650" Height="492" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/ButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Styles/LabelStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid PreviewKeyDown="Grid_PreviewKeyDown">
+        <Label x:Name="TitleLabel"
+               Style="{StaticResource UCILabel}" 
+               Margin="5,150,10,5"
+               FontSize="18"
+               Width="600"/>
+        <Label x:Name="MessageLabel"
+               Style="{StaticResource UCILabel}" 
+               Margin="0,200,0,0"
+               FontWeight="Bold"
+               Width="600"/>
+        <Button x:Name="ConfirmButton"
+                    Style="{StaticResource UCIButton}" 
+                    HorizontalAlignment="Right" 
+                    Height="50" 
+                    VerticalAlignment="Bottom" 
+                    Width="150"
+                    Content="تایید" Click="ConfirmButton_Click"/>
+
+        <Button x:Name="CancleButton"
+                Style="{StaticResource UCIButton}" 
+                HorizontalAlignment="Left" 
+                Height="50" 
+                VerticalAlignment="Bottom" 
+                Width="150"
+                Content="انصراف" Click="CancleButton_Click"/>
+    </Grid>
+</UserControl>
